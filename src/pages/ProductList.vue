@@ -229,7 +229,8 @@
         </table>
       </div>
       <nav class="flex justify-end items-center space-x-2 rtl:space-x-reverse mt-5">
-        <div role="button" @click="currentPage= 1" class="w-10 h-10 bg-transparent text-gray-500 hover:bg-primary hover:text-white p-2 inline-flex justify-center text-sm font-medium items-center gap-2 rounded-full">
+        <div role="button" @click="currentPage= 1"
+             class="w-10 h-10 bg-transparent text-gray-500 hover:bg-primary hover:text-white p-2 inline-flex justify-center text-sm font-medium items-center gap-2 rounded-full">
           <span aria-hidden="true">«</span>
           <span class="sr-only">Previous</span>
         </div>
@@ -243,8 +244,9 @@
           {{ page }}
         </div>
 
-        <div role="button" @click="currentPage= totalOfPages" class="w-10 h-10 bg-transparent text-gray-500 hover:bg-primary hover:text-white p-2 inline-flex justify-center text-sm font-medium items-center gap-2 rounded-full"
-           >
+        <div role="button" @click="currentPage= totalOfPages"
+             class="w-10 h-10 bg-transparent text-gray-500 hover:bg-primary hover:text-white p-2 inline-flex justify-center text-sm font-medium items-center gap-2 rounded-full"
+        >
           <span class="sr-only">Next</span>
           <span aria-hidden="true">»</span>
         </div>
@@ -335,11 +337,7 @@ const pages = computed(() => {
   if (end > totalOfPages.value) {
     end = totalOfPages.value;
   }
-  console.log({
-    start,
-    end,
-    totalOfPages: totalOfPages.value
-  })
+
   const pageNumbers = [];
   for (let i = start; i <= end; i++) {
     pageNumbers.push(i);
